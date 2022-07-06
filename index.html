@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi Mini Project</title> 
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class ="container">
+            <div class="header">
+            <h1>Tamagotachi Game</h1>
+            <p>Build your own virtual pet today!</p>
+            <p> Enter your Tamagotachi name and Click "Submit" To Begin the Game!</p>
+            <label for ="name">Tamagotachi Name:</label>
+            <input type="text" name="name" id="name" required></input>
+            <input type="submit" value="Submit" class="submit" onclick="alterButtonName()">
+        </div>
+    </div>
+        <nav></nav>
+    </header>
+        <!-- Scales/ Metrics that will increase & decrease based on the button-->
+    <main> 
+        <br>
+        <!-- Dropdown List for the Rules of the Game -->
+        <button type="button" class="gamesRules">Click to Learn About the Rules</button>
+        <div class="rules">
+            <p> Take Care of your Tamagotchi Pet and Prevent it from Dying</p>
+        </div>
+        <div class="container">
+            
+            <div class="scales">
+                <h2>Hunger</h2>
+                <h2>Sleepiness</h2>
+                <h2>Boredom</h2>
+        </div>
+
+        <!-- Buttons that will increase or descrease the scales/metrices -->
+        <div class="container">
+            <div class="buttonsFeature">
+                <button class="value">Feed</button>
+                <button class="value">Turn off the lights</button>
+                <button class="value">Play</button>
+        </div>
+    </main>
+    <!-- Link to JavaScript -->
+    <script src="./js/app.js"></script>
+</body>
+</html>
