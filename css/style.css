@@ -1,6 +1,7 @@
 header{
     border: thick solid black;
     text-align: center;
+    padding-bottom:15px;
 }
 body{
 
@@ -33,4 +34,12 @@ body{
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
+    max-width: 60%;
+  }
+
+  .circle{
+    height: 300px;
+    width: 300px;
+    background-color: #bbb;
+    border-radius: 50%;
   }

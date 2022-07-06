@@ -18,6 +18,7 @@
             <label for ="name">Tamagotachi Name:</label>
             <input type="text" name="name" id="name" required></input>
             <input type="submit" value="Submit" class="submit" onclick="alterButtonName()">
+            <br>
         </div>
     </div>
         <nav></nav>
@@ -29,20 +30,37 @@
         <button type="button" class="gamesRules">Click to Learn About the Rules</button>
         <div class="rules">
             <p> Take Care of your Tamagotchi Pet and Prevent it from Dying</p>
+            <ol>
+                <li>Below you have three stats: Hunger, Sleepiness and Boredom </li>
+                <li>These Stats starts at 1</li>
+                <li>During the game these stats will increase</li>
+                <li> If they reach 10, your Tamagotchi friend will pass on</li>
+                <li>The three action button: Feed, Sleep, Play will prevent this from happening </li>
+                <li>These action button can also increase or decrease the stats as well</li>
+                
+                
+            </ol>
+            
+            <p>Are you up to the Challenge? Are you able to keep your Tamagotchi friend alive?</p>
         </div>
         <div class="container">
-            
+            <div class="circle">
+                
+            </div>
             <div class="scales">
                 <h2>Hunger</h2>
+                    <p>1</p>
                 <h2>Sleepiness</h2>
+                    <p>1</p>
                 <h2>Boredom</h2>
+                    <p>1</p>
         </div>
 
         <!-- Buttons that will increase or descrease the scales/metrices -->
         <div class="container">
             <div class="buttonsFeature">
                 <button class="value">Feed</button>
-                <button class="value">Turn off the lights</button>
+                <button class="value">Sleep</button>
                 <button class="value">Play</button>
         </div>
     </main>

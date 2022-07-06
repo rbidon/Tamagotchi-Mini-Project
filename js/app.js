@@ -32,8 +32,13 @@ class Game {
         // increase hunger
         this.hunger ++;
     }
-
+    ageUp(){
+        this.age ++;
+    }
 }
+// Instantiate your Tamagotchi (If you created a class)
+let tamagotchi = new Game("Sammy");
+
 
 
 // Alter button text based on the name that was submited
@@ -46,8 +51,9 @@ const alterButtonName = () => {
     // console.log(buttonValue);
     // Change the button innerHTML
     buttonValue[0].innerHTML =`Feed ${tamagotachiName}`;
-    buttonValue[1].innerHTML =`Turn off ${tamagotachiName}'s lights`;
+    buttonValue[1].innerHTML =`Put ${tamagotachiName} to Bed`;
     buttonValue[2].innerHTML =`Play with ${tamagotachiName}`;
+    
 }
 
 // function that allows the dropdown option
