@@ -9,6 +9,18 @@ body{
         /* background: linear-gradient(90deg, hsla(61, 81%, 88%, 1) 0%, hsla(310, 65%, 85%, 1) 50%, hsla(7, 89%, 69%, 1) 100%); */
 }
 
+.start-endbtn{
+    display:flex;
+    justify-content:center;
+    margin-top: 10px;
+    
+}
+.start{
+    margin-right: 10px;
+}
+.nameText{
+    text-align: center;
+}
 /* Dropdrown option for rules */
 /* Style the button that is used to open and close the collapsible content */
 .gamesRules {
@@ -37,9 +49,19 @@ body{
     max-width: 60%;
   }
 
-  .circle{
+  .circle {
     height: 300px;
     width: 300px;
-    background-color: #bbb;
+    background-color: white;
     border-radius: 50%;
+    
   }
+.brownEgg{
+    height: 250px;
+    width: 250px;
+    /* background-color: #bbb; */
+    border-radius: 50%;
+    display:flex;
+    justify-content:left;
+    align-items: center;
+}
