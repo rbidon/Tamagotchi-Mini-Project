@@ -158,64 +158,18 @@ submitBTN.addEventListener("click", function alterButtonName (event) {
     // tamagotachiName = " ";
     // Age section
  /// Update age function/ call in the function
-    const ageUpTamagotchi = () => {
-        tamagotchi.ageUp()
-        console.log(age)
-    //setInterval  inside the submit
-        if(tamagotchi.age === 5){
-                    console.log("Cute Happy Chicken Eggs")
-                    alert(`${tamagotachiName} has evolved`);
-                    document.querySelector(".brownEgg").src ="../images/cute-happy-chicken-egg-show-muscle-cartoon-character-chicken-egg-easter-concept_92289-1206.webp"
-                } else if(tamagotchi.age === 9){
-                    console.log("Little Chick")
-                    alert(`${tamagotachiName} has evolved`);
-                    document.querySelector(".brownEgg").src ="../images/pngwing.com.png"
-                } else if(tamagotchi.age === 13){
-                    console.log("Chicken Hen")
-                    alert(`${tamagotachiName} has evolved`);
-                    document.querySelector(".brownEgg").src ="../images/nTBRr85rc.jpg";
-                   }  else if(tamagotchi.age ===19){ clearInterval(agingUpTamagotchi);
-                    clearInterval(increasingScaleTamagotchi)
-                    alert("Winner Winner Chicken Dinner!")
-                    submitBTN.reset();
-                }
-            
-        }
-    // stopInterval/ style text in the invital
-    const increaseScaleTamgotchi = () => {
-        tamagotchi.increaseScale();
- 
-    if(tamagotchi.hunger === 6 || tamagotchi.sleepiness ===6 || tamagotchi.boredom ===6){
-        hunger.style.color = "yellow";
-        sleepiness.style.color = "yellow"
-        console.log(hunger);
-    } else if(tamagotchi.hunger === 11){
-        hunger.style.color = "red";
-        alert(`${tamagotachiName} has passed on from hunger!`);
-        clearInterval(increasingScaleTamagotchi);
-        clearInterval(agingUpTamagotchi);
-    } else if(tamagotchi.sleepiness === 11){
-        sleepiness.style.color = "red";
-        alert(`${tamagotachiName} has passed on from sleepiness!`);
-        clearInterval(increasingScaleTamagotchi);
-        clearInterval(agingUpTamagotchi);
-    } else if(tamagotchi.boredom === 11){
-        boredom.style.color = "red";
-        alert(`${tamagotachiName} has passed on from boredom!`);
-        clearInterval(increasingScaleTamagotchi);
-        clearInterval(agingUpTamagotchi);
-    }
- }
+
  // feed function
 const feedTamagotchi = () => {
     tamagotchi.feed();
     console.log(tamagotchi.hunger);
     // console.log(tamagotchi.sleepiness);
-    if(tamagotchi.hunger === 6 ){
-        hunger.style.color = "yellow";
+    // if(tamagotchi.hunger === 6 ){
+    //     hunger.style.color = "yellow";
         // sleepiness.style.color = "yellow"
         console.log(hunger);
-    } else if(tamagotchi.hunger === 11){
+    //} else 
+    if(tamagotchi.hunger === 11){
         hunger.style.color = "red";
         alert(`${tamagotachiName} has passed on from hunger!`);
         clearInterval(increasingScaleTamagotchi);
@@ -228,10 +182,11 @@ const feedTamagotchi = () => {
     // console.log(tamagotchi.hunger);
     console.log(tamagotchi.sleepiness);
     // console.log(tamagotchi.boredom);
-    if( tamagotchi.sleepiness ===6){
-        sleepiness.style.color = "yellow"
-        console.log(hunger);
-    } else if(tamagotchi.sleepiness === 11){
+//     if( tamagotchi.sleepiness ===6){
+//         sleepiness.style.color = "yellow"
+//         console.log(hunger);
+//    // } else
+     if(tamagotchi.sleepiness === 11){
         sleepiness.style.color = "red";
         alert(`${tamagotachiName} has passed on from sleepiness!`);
         clearInterval(increasingScaleTamagotchi);
@@ -244,10 +199,11 @@ const playTamagotchi = () => {
     // console.log(tamagotchi.hunger);
     // if reach 10 make it a red color
     console.log(tamagotchi.boredom);
-    if(tamagotchi.boredom ===6){
-        boredom.style.color = "yellow"
-        console.log(hunger);
-    } else if(tamagotchi.boredom === 11){
+//     if(tamagotchi.boredom ===6){
+//         boredom.style.color = "yellow"
+//         console.log(hunger);
+//    // } else
+    if(tamagotchi.boredom === 11){
         boredom.style.color = "red";
         alert(`${tamagotachiName} has passed on from boredom!`);
         clearInterval(increasingScaleTamagotchi);
@@ -255,16 +211,67 @@ const playTamagotchi = () => {
     }
  };
 
+
    // button function for the game 
    feed.addEventListener("click", feedTamagotchi);
    sleep.addEventListener("click", sleepTamagotchi);
    play.addEventListener("click", playTamagotchi);
-    
+   
+   const ageUpTamagotchi = () => {
+    tamagotchi.ageUp()
+    console.log(age)
+//setInterval  inside the submit
+    if(tamagotchi.age === 5){
+                console.log("Cute Happy Chicken Eggs")
+                alert(`${tamagotachiName} has evolved`);
+                document.querySelector(".brownEgg").src ="../images/cute-happy-chicken-egg-show-muscle-cartoon-character-chicken-egg-easter-concept_92289-1206.webp"
+            } else if(tamagotchi.age === 9){
+                console.log("Little Chick")
+                alert(`${tamagotachiName} has evolved`);
+                document.querySelector(".brownEgg").src ="../images/pngwing.com.png"
+            } else if(tamagotchi.age === 13){
+                console.log("Chicken Hen")
+                alert(`${tamagotachiName} has evolved`);
+                document.querySelector(".brownEgg").src ="../images/nTBRr85rc.jpg";
+               }  else if(tamagotchi.age ===19){ clearInterval(agingUpTamagotchi);
+                clearInterval(increasingScaleTamagotchi)
+                alert("Winner Winner Chicken Dinner!")
+                submitBTN.reset();
+            }
+        
+    }
+// stopInterval/ style text in the invital
+const increaseScaleTamgotchi = () => {
+    tamagotchi.increaseScale();
+
+// if(tamagotchi.hunger === 6 || tamagotchi.sleepiness ===6 || tamagotchi.boredom ===6){
+//     hunger.style.color = "yellow";
+//     sleepiness.style.color = "yellow"
+//     console.log(hunger);
+// } else 
+if(tamagotchi.hunger === 11){
+    hunger.style.color = "red";
+    alert(`${tamagotachiName} has passed on from hunger!`);
+    clearInterval(increasingScaleTamagotchi);
+    clearInterval(agingUpTamagotchi);
+} else if(tamagotchi.sleepiness === 11){
+    sleepiness.style.color = "red";
+    alert(`${tamagotachiName} has passed on from sleepiness!`);
+    clearInterval(increasingScaleTamagotchi);
+    clearInterval(agingUpTamagotchi);
+} else if(tamagotchi.boredom === 11){
+    boredom.style.color = "red";
+    alert(`${tamagotachiName} has passed on from boredom!`);
+    clearInterval(increasingScaleTamagotchi);
+    clearInterval(agingUpTamagotchi);
+}
+}
     //setInterval  inside the submit
         let agingUpTamagotchi=setInterval(ageUpTamagotchi, 3000);
         let increasingScaleTamagotchi = setInterval(increaseScaleTamgotchi, 2000);
     //Scale Section
 //        
+// submitBTN.addEventListener("reset",alterButtonName);
  });
 // function that allows the dropdown option for the rules
 let gamesRules = document.querySelector(".gamesRules");

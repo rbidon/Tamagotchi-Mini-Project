@@ -31,13 +31,13 @@
         <div class="rules">
             <p> Take Care of your Tamagotchi Pet and Prevent it from Dying</p>
             <ol>
-                <li>Below you have three stats: Hunger, Sleepiness and Boredom </li>
+                <li>Below you have three stats:<span style="font-weight: bold"> Hunger, Sleepiness and Boredom </span> </li>
                 <li>These Stats starts at 1</li>
-                <li>During the game these stats will increase</li>
-                <li> If they reach 10, your Tamagotchi friend will pass on</li>
-                <li>The three action button: Feed, Sleep, Play will prevent this from happening </li>
-                <li>These action button can also increase or decrease the stats as well</li>
-                
+                <li>During the game these stats will increase by 1</li>
+                <li> If they reach<span style="color:red; font-weight:bold;"> 10</span>, your Tamagotchi friend will <span style="color:red; font-weight:bold;"> pass on </span></li>
+                <li>The three action button: <span style="font-weight: bold"> Feed, Sleep, Play </span> will prevent this from happening </li>
+                <li>These action button will decrease the stats as well</li>
+                <li>Try to </li>
                 
             </ol>
             
@@ -51,8 +51,10 @@
                 <button class="start">Start</button>
                 <button class="startOver">Start Over</button>
             </div> -->
+            <div class ="flexMoving">
             <div class="circle">
                 <img  class="brownEgg"src="./images/CropBrown.png" alt="Brown Egg" >
+            </div>
             </div>
             <div class="scales">
                 <!-- Set InIvital for thi age functon + make it function -->
@@ -64,17 +66,24 @@
                 <h2>Sleepiness</h2>
                     <h2 class="sleepiness">1</h2>
                 <h2>Boredom</h2>
-                    <h2 class="boredom">1</h2>
-                
-        </div>
+                    <h2 class="boredom">1</h2> 
+            </div>
+         <!-- Buttons that will increase or descrease the scales/metrices -->
 
-        <!-- Buttons that will increase or descrease the scales/metrices -->
-        <div class="container">
             <div class="buttonsFeature">
                 <button class="value">Feed</button>
                 <button class="value">Sleep</button>
                 <button class="value">Play</button>
-        </div>
+            </div>
+        
+
+        <!-- Buttons that will increase or descrease the scales/metrices -->
+        <!-- <div class="container">
+            <div class="buttonsFeature">
+                <button class="value">Feed</button>
+                <button class="value">Sleep</button>
+                <button class="value">Play</button>
+        </div> -->
     </main>
     <!-- Link to JavaScript -->
     <script src="./js/app.js"></script>

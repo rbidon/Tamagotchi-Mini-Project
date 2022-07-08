@@ -4,6 +4,7 @@ header{
     padding-bottom:15px;
 }
 body{
+    /* background: linear-gradient(90deg, hsla(58, 100%, 68%, 1) 23%, hsla(33, 100%, 53%, 1) 100%); */
 
         background: linear-gradient(90deg, hsla(242, 58%, 73%, 1) 4%, hsla(157, 72%, 82%, 1) 86%);
         /* background: linear-gradient(90deg, hsla(61, 81%, 88%, 1) 0%, hsla(310, 65%, 85%, 1) 50%, hsla(7, 89%, 69%, 1) 100%); */
@@ -59,20 +60,35 @@ body{
     background-color: #f1f1f1;
     max-width: 60%;
   }
-
-  .circle {
-    height: 300px;
-    width: 300px;
-    background-color: white;
-    border-radius: 50%;
-    
-  }
-.brownEgg{
+.flexMoving{
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+   .circle {
     height: 250px;
     width: 250px;
+    background-color: white;
+    border-radius: 50%;
+  } 
+.brownEgg{
+    height: 200px;
+    width: 200px;
     /* background-color: #bbb; */
     border-radius: 50%;
+    
+    padding-left: 22px;
+    padding-bottom: 22px;
+    padding-top: 22px;
+}
+.buttonsFeature{
     display:flex;
-    justify-content:left;
+    justify-content:center;
     align-items: center;
+}
+.value{
+    width: 100%;
+    font-size: 25px;
 }
