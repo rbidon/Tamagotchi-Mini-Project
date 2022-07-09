@@ -75,7 +75,20 @@ class Game {
         this.sleepiness++;
         this.boredom ++;
     } 
-    
+    reset(){
+        this.age =0;
+        this.hunger =1;
+        this.sleepiness =1;
+        this.boredom =1;
+        age.innerHTML = this.age;
+        hunger.innerHTML =this.hunger;
+        hunger.style.color = "green";
+        sleepiness.innerHTML =this.sleepiness;
+        sleepiness.style.color = "green";
+        boredom.innerHTML =this.boredom;
+        boredom.style.color = "green";
+        document.querySelector(".brownEgg").src="../images/CropBrown.png"
+    }
 }
 // Instantiate your Tamagotchi (If you created a class)
 let tamagotchi = new Game("Sammy");
@@ -84,59 +97,8 @@ let tamagotchi = new Game("Sammy");
 // tamagotchi.sleep();
 // tamagotchi.ageUp();
 // tamagotchi.increaseScale();
+// tamagotchi.reset();
 
-
-
-// // event handler to each button
-// feed.addEventListener("click", feedTamagotchi);
-// sleep.addEventListener("click", sleepTamagotchi);
-// play.addEventListener("click", playTamagotchi);
-//stop and style in scaling section
-// const increaseScaleTamgotchi = () => {
-//     tamagotchi.increaseScale();
-// }
-
-// stopInterval/ style text in the invital
-// hunger.innerHTML = tamagotchi.hunger;
-// if(tamagotchi.hunger === 5){
-//     hunger.style.color = "yellow";
-//     console.log(hunger);
-// } else if(tamagotchi.hunger === 10){
-//     hunger.style.color = "red";
-//     alert(`${tamagotachiName} has passed on from hunger!`);
-//     clearInterval(increasingScaleTamagotchi);
-//     clearInterval(agingUpTamagotchi);
-    
-// }
-// // sleepiness.innerHTML = tamagotchi.sleepiness;
-// if(tamagotchi.sleepiness === 5){
-//     hunger.style.color = "yellow";
-// } else if(tamagotchi.sleepiness === 10){
-//     hunger.style.color = "red";
-//     alert(`${tamagotachiName} has passed on from sleepiness!`);
-//     clearInterval(increasingScaleTamagotchi);
-//     clearInterval(agingUpTamagotchi);
-    
-// }
-// // boredom.innerHTML = tamagotchi.boredom;
-// if(tamagotchi.boredom === 5){
-//     hunger.style.color = "yellow";
-// } else if(tamagotchi.boredom === 10){
-//     hunger.style.color = "red";
-//     alert(`${tamagotachiName} has passed on from boredom!`);
-//     clearInterval(increasingScaleTamagotchi);
-//     clearInterval(agingUpTamagotchi);
-    
-// }
-// //setInterval  inside the submit
-// setInterval(feedTamagotchi, 2000);
-// setInterval(sleepTamagotchi, 2000);
-// setInterval(playTamagotchi, 2000);
-// setInterval(ageUpTamagotchi, 2000);
-// stopInterval for those 
-/// Start Button/Game
-// let start = document.querySelector(".start");
-//click the start button to invoke the game and the action
 
 // Alter button text based on the name that was submited
 const submitBTN = document.querySelector(".submit");
@@ -169,12 +131,12 @@ const feedTamagotchi = () => {
         // sleepiness.style.color = "yellow"
         console.log(hunger);
     //} else 
-    if(tamagotchi.hunger === 11){
-        hunger.style.color = "red";
-        alert(`${tamagotachiName} has passed on from hunger!`);
-        clearInterval(increasingScaleTamagotchi);
-        clearInterval(agingUpTamagotchi);
-    }
+    // if(tamagotchi.hunger === 11){
+    //     hunger.style.color = "red";
+    //     alert(`${tamagotachiName} has passed on from hunger!`);
+    //     clearInterval(increasingScaleTamagotchi);
+    //     clearInterval(agingUpTamagotchi);
+    // }
 };
  // Sleep function
  const sleepTamagotchi = () =>{
@@ -186,29 +148,30 @@ const feedTamagotchi = () => {
 //         sleepiness.style.color = "yellow"
 //         console.log(hunger);
 //    // } else
-     if(tamagotchi.sleepiness === 11){
-        sleepiness.style.color = "red";
-        alert(`${tamagotachiName} has passed on from sleepiness!`);
-        clearInterval(increasingScaleTamagotchi);
-        clearInterval(agingUpTamagotchi);
-    }
+    //  if(tamagotchi.sleepiness === 11){
+    //     sleepiness.style.color = "red";
+    //     alert(`${tamagotachiName} has passed on from sleepiness!`);
+    //     clearInterval(increasingScaleTamagotchi);
+    //     clearInterval(agingUpTamagotchi);
+    // }
  }; 
     // play function
 const playTamagotchi = () => {
     tamagotchi.play();
     // console.log(tamagotchi.hunger);
     // if reach 10 make it a red color
-    console.log(tamagotchi.boredom);
+    // console.log(tamagotchi.boredom);
 //     if(tamagotchi.boredom ===6){
 //         boredom.style.color = "yellow"
 //         console.log(hunger);
 //    // } else
-    if(tamagotchi.boredom === 11){
-        boredom.style.color = "red";
-        alert(`${tamagotachiName} has passed on from boredom!`);
-        clearInterval(increasingScaleTamagotchi);
-        clearInterval(agingUpTamagotchi);
-    }
+    // if(tamagotchi.boredom === 11){
+    //     boredom.style.color = "red";
+    //     alert(`${tamagotachiName} has passed on from boredom!`);
+    //     clearInterval(increasingScaleTamagotchi);
+    //     clearInterval(agingUpTamagotchi);
+
+    // }
  };
 
 
@@ -217,6 +180,39 @@ const playTamagotchi = () => {
    sleep.addEventListener("click", sleepTamagotchi);
    play.addEventListener("click", playTamagotchi);
    
+
+// stopInterval/ style text in the invital
+const increaseScaleTamgotchi = () => {
+    tamagotchi.increaseScale();
+
+// if(tamagotchi.hunger === 6 || tamagotchi.sleepiness ===6 || tamagotchi.boredom ===6){
+//     hunger.style.color = "yellow";
+//     sleepiness.style.color = "yellow"
+//     console.log(hunger);
+// } else 
+if(tamagotchi.hunger === 11){
+    hunger.style.color = "red";
+    alert(`${tamagotachiName} has passed on from hunger! Game has been reset`);
+    tamagotchi.reset();
+    clearInterval(increasingScaleTamagotchi);
+    clearInterval(agingUpTamagotchi);
+    
+} else if(tamagotchi.sleepiness === 11){
+    sleepiness.style.color = "red";
+    alert(`${tamagotachiName} has passed on from sleepiness! Game has been reset`);
+    clearInterval(increasingScaleTamagotchi);
+    clearInterval(agingUpTamagotchi);
+    tamagotchi.reset()
+} else if(tamagotchi.boredom === 11){
+    boredom.style.color = "red";
+    alert(`${tamagotachiName} has passed on from boredom! Game has been reset`);
+    clearInterval(increasingScaleTamagotchi);
+    clearInterval(agingUpTamagotchi);
+    tamagotchi.reset()
+}
+}
+
+
    const ageUpTamagotchi = () => {
     tamagotchi.ageUp()
     console.log(age)
@@ -236,41 +232,25 @@ const playTamagotchi = () => {
                }  else if(tamagotchi.age ===19){ clearInterval(agingUpTamagotchi);
                 clearInterval(increasingScaleTamagotchi)
                 alert("Winner Winner Chicken Dinner!")
-                submitBTN.reset();
+                let resetPrompt = prompt("Do you want to reset the game? Yes or No")
+                    if(resetPrompt === "yes"){
+                        tamagotchi.reset()
+                        tamagotachiName = " ";
+                    } else{
+                        alert("Okay! You want to admire your work. You can also select the reset button on the top right.")
+                    }
+                // tamagotchi.reset()
             }
         
     }
-// stopInterval/ style text in the invital
-const increaseScaleTamgotchi = () => {
-    tamagotchi.increaseScale();
 
-// if(tamagotchi.hunger === 6 || tamagotchi.sleepiness ===6 || tamagotchi.boredom ===6){
-//     hunger.style.color = "yellow";
-//     sleepiness.style.color = "yellow"
-//     console.log(hunger);
-// } else 
-if(tamagotchi.hunger === 11){
-    hunger.style.color = "red";
-    alert(`${tamagotachiName} has passed on from hunger!`);
-    clearInterval(increasingScaleTamagotchi);
-    clearInterval(agingUpTamagotchi);
-} else if(tamagotchi.sleepiness === 11){
-    sleepiness.style.color = "red";
-    alert(`${tamagotachiName} has passed on from sleepiness!`);
-    clearInterval(increasingScaleTamagotchi);
-    clearInterval(agingUpTamagotchi);
-} else if(tamagotchi.boredom === 11){
-    boredom.style.color = "red";
-    alert(`${tamagotachiName} has passed on from boredom!`);
-    clearInterval(increasingScaleTamagotchi);
-    clearInterval(agingUpTamagotchi);
-}
-}
     //setInterval  inside the submit
         let agingUpTamagotchi=setInterval(ageUpTamagotchi, 3000);
         let increasingScaleTamagotchi = setInterval(increaseScaleTamgotchi, 2000);
     //Scale Section
-//        
+//  
+
+
 // submitBTN.addEventListener("reset",alterButtonName);
  });
 // function that allows the dropdown option for the rules
@@ -286,3 +266,19 @@ gamesRules.addEventListener("click", () => {
             rules.style.display = "none";
         }
 });
+
+// // reset hunger, age, sleepiness in a function
+// let reset =document.querySelector(".reset");
+// reset.addEventListener("click",resetTamagotchi)
+// const resetTamagotchi = () => {
+//     tamagotchi.reset()
+// };
+// reset hunger, age, sleepiness in a function
+let reset =document.querySelector(".reset");
+
+const resetTamagotchi = () => {
+    tamagotchi.reset()
+    // clearInterval(agingUpTamagotchi);
+    // clearInterval(increasingScaleTamagotchi)
+};
+reset.addEventListener("click",resetTamagotchi)
