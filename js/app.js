@@ -91,7 +91,7 @@ class Game {
         sleepiness.style.color = "green";
         boredom.innerHTML =this.boredom;
         boredom.style.color = "green";
-        document.querySelector(".brownEgg").src="./images/CropBrown.jpg"
+        document.querySelector(".brownEgg").src="../images/CropBrown.jpeg"
     }
 }
 // Instantiate your Tamagotchi (If you created a class)
@@ -170,7 +170,9 @@ const playTamagotchi = () => {
  };
 // Alter button text based on the name that was submited
 const submitBTN = document.querySelector(".submit");
-submitBTN.addEventListener("click", function alterButtonName (event) {
+submitBTN.addEventListener("click",function (event) {
+   
+   //function alterButtonName 
     event.preventDefault();
     // grab the text field value
     let tamagotachiName = document.querySelector("#name").value;
@@ -220,15 +222,15 @@ const ageUpTamagotchi = () => {
     if(tamagotchi.age === 5){
                 console.log("Cute Happy Chicken Eggs")
                 alert(`${tamagotachiName} has evolved`);
-                document.querySelector(".brownEgg").src ="./images/eggSmile.jpg"
+                document.querySelector(".brownEgg").src ="../images/eggMusles.jpeg"
             } else if(tamagotchi.age === 9){
                 console.log("Little Chick")
                 alert(`${tamagotachiName} has evolved`);
-                document.querySelector(".brownEgg").src ="./images/littleChick.png"
+                document.querySelector(".brownEgg").src ="../images/littleChick.png"
             } else if(tamagotchi.age === 13){
                 console.log("Chicken Hen")
                 alert(`${tamagotachiName} has evolved`);
-                document.querySelector(".brownEgg").src ="./images/grownHen.jpg";
+                document.querySelector(".brownEgg").src ="../images/grownHen.jpeg";
                }  else if(tamagotchi.age ===19){ 
                 clearInterval(agingUpTamagotchi);
                 clearInterval(increasingScaleTamagotchi)
