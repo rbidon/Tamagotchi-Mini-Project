@@ -1,2 +1,4 @@
 # Tamagotchi-Mini-Project
-Commit 1: Style the beginning section of project & made some interactivity/ JS
+Using my front-end web development skills to create a "living" pet! We'll use HTML, CSS, and JavaScript to interact with our pet.
+
+
