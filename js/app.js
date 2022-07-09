@@ -215,12 +215,12 @@ submitBTN.addEventListener("click", function alterButtonName (event) {
 }
 const ageUpTamagotchi = () => {
     tamagotchi.ageUp()
-    console.log(age)
+    // console.log(age)
 //setInterval  inside the submit
     if(tamagotchi.age === 5){
                 console.log("Cute Happy Chicken Eggs")
                 alert(`${tamagotachiName} has evolved`);
-                document.querySelector(".brownEgg").src ="../images/cute-happy-chicken-egg-show-muscle-cartoon-character-chicken-egg-easter-concept_92289-1206.webp"
+                document.querySelector(".brownEgg").src ="../images/funny-cartoon-cute-happy-chicken-egg-smiling-kawaii-healthy-food-concept-icon-comic-character_83111-2741-1.webp"
             } else if(tamagotchi.age === 9){
                 console.log("Little Chick")
                 alert(`${tamagotachiName} has evolved`);
