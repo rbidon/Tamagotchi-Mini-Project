@@ -168,6 +168,8 @@ const playTamagotchi = () => {
 
     // }
  };
+ // reset hunger, age, sleepiness in a function
+let reset =document.querySelector(".reset");
  const resetTamagotchi = () => {
     tamagotchi.reset()
     // clearInterval(agingUpTamagotchi);
@@ -216,7 +218,7 @@ submitBTN.addEventListener("click",function (event) {
     // tamagotchi.reset()
 } else if(tamagotchi.boredom === 10){
     boredom.style.color = "red";
-    alert(`${tamagotachiName} has passed on from boredom!Click the reset button to reset the game.`);
+    alert(`${tamagotachiName} has passed on from boredom! Click the reset button to reset the game.`);
     clearInterval(increasingScaleTamagotchi);
     clearInterval(agingUpTamagotchi);
     reset.addEventListener("click",resetTamagotchi)
@@ -249,6 +251,7 @@ const ageUpTamagotchi = () => {
                         tamagotachiName = " ";
                     } else{
                         alert("Okay! You want to admire your work. You can also select the reset button on the top right.")
+                        reset.addEventListener("click",resetTamagotchi)
                     }
                 // tamagotchi.reset()
             }
@@ -264,7 +267,6 @@ const ageUpTamagotchi = () => {
  });
 
 
-// reset hunger, age, sleepiness in a function
-let reset =document.querySelector(".reset");
+
 
 
