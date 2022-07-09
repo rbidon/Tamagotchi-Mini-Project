@@ -17,7 +17,7 @@ let age = document.querySelector(".age");
 
  // grab the text field value
  let tamagotachiName = document.querySelector("#name").value;
-// 1. Game objecy/class
+// 1. Game object/class
 // event listeners/handlers that call methods in your game object or class.
 class Game {
     constructor(name) {
@@ -33,20 +33,21 @@ class Game {
     // methods
     feed(){
         console.log(`${this.name} is eating!`);
-         hunger.innerHTML= this.hunger ;
-         sleepiness.innerHTML =this.sleepiness;
          // decrease hunger
         this.hunger --
+        hunger.innerHTML= this.hunger ;
+        //  sleepiness.innerHTML =this.sleepiness;
         // // increase sleepiness
         // this.sleepiness ++;
     }
     sleep(){
         console.log(`${this.name} is sleeping!`);
-        hunger.innerHTML= this.hunger ;
-         sleepiness.innerHTML =this.sleepiness;
-         boredom.innerHTML =this.boredom;
         //  decrease sleepiness
         this.sleepiness --;
+        // hunger.innerHTML= this.hunger ;
+         sleepiness.innerHTML =this.sleepiness;
+        //  boredom.innerHTML =this.boredom;
+        
         // // increase hunger
         // this.hunger ++;
         // // increase boredom
@@ -54,27 +55,30 @@ class Game {
     }
     play(){
         console.log(`${this.name} is playing!`);
-         boredom.innerHTML =this.sleepiness;
-         hunger.innerHTML= this.hunger ;
         /// decrease bordeom
         this.boredom --;
+        boredom.innerHTML =this.boredom;
+        //  hunger.innerHTML= this.hunger ;
+        
+        
         // // increase hunger
         // this.hunger ++;
     }
     ageUp(){
-        console.log(`${this.name} has ageUp!`);
-        age.innerHTML =this.age
+        console.log(`${this.name} has ageUp! Age is now ${this.age}`);
         this.age ++;
+        age.innerHTML =this.age
+        
     }
     increaseScale(){
-        hunger.innerHTML =this.hunger;
+        this.hunger ++;
+        this.sleepiness++;
+        this.boredom ++; hunger.innerHTML =this.hunger;
         sleepiness.innerHTML =this.sleepiness;
         boredom.innerHTML =this.boredom;
         
-        this.hunger ++;
-        this.sleepiness++;
-        this.boredom ++;
-    } 
+        console.log(`${this.name} has ageUp! Hunger is now ${this.hunger}, Sleepiness is now ${this.sleepiness},Boredom is now ${this.boredom}`);
+         }  
     reset(){
         this.age =0;
         this.hunger =1;
@@ -91,7 +95,7 @@ class Game {
     }
 }
 // Instantiate your Tamagotchi (If you created a class)
-let tamagotchi = new Game("Sammy");
+let tamagotchi = new Game("Tamagotchi");
 // tamagotchi.feed();
 // tamagotchi.play();
 // tamagotchi.sleep();
@@ -99,37 +103,28 @@ let tamagotchi = new Game("Sammy");
 // tamagotchi.increaseScale();
 // tamagotchi.reset();
 
-
-// Alter button text based on the name that was submited
-const submitBTN = document.querySelector(".submit");
-submitBTN.addEventListener("click", function alterButtonName (event) {
-    event.preventDefault();
-    // grab the text field value
-    let tamagotachiName = document.querySelector("#name").value;
-    // console.log(tamagotachiName);
-    // grab the buttonsFeature
-    let nameText = document.querySelector(".nameText");
-    nameText.innerHTML = `Say Hello to your Tamagotachi Friend, ${tamagotachiName}!`;
-    const buttonValue = document.querySelectorAll(".value");
-    // console.log(buttonValue);
-    // Change the button innerHTML
-    buttonValue[0].innerHTML =`Feed ${tamagotachiName}`;
-    buttonValue[1].innerHTML =`Put ${tamagotachiName} to Bed`;
-    buttonValue[2].innerHTML =`Play with ${tamagotachiName}`;
+// function that allows the dropdown option for the rules
+let gamesRules = document.querySelector(".gamesRules");
+gamesRules.addEventListener("click", () => { 
     
-    // tamagotachiName = " ";
-    // Age section
- /// Update age function/ call in the function
-
+        let rules = gamesRules.nextElementSibling;
+        // console.log(rules);
+        gamesRules.classList.toggle("active");
+        if (gamesRules.classList.contains("active")) {
+            rules.style.display = "block";
+        } else {
+            rules.style.display = "none";
+        }
+});
  // feed function
 const feedTamagotchi = () => {
     tamagotchi.feed();
-    console.log(tamagotchi.hunger);
+    // console.log(tamagotchi.hunger);
     // console.log(tamagotchi.sleepiness);
     // if(tamagotchi.hunger === 6 ){
     //     hunger.style.color = "yellow";
         // sleepiness.style.color = "yellow"
-        console.log(hunger);
+        // console.log(tamagotchi.hunger);
     //} else 
     // if(tamagotchi.hunger === 11){
     //     hunger.style.color = "red";
@@ -142,11 +137,11 @@ const feedTamagotchi = () => {
  const sleepTamagotchi = () =>{
     tamagotchi.sleep();
     // console.log(tamagotchi.hunger);
-    console.log(tamagotchi.sleepiness);
+    // console.log(tamagotchi.sleepiness);
     // console.log(tamagotchi.boredom);
 //     if( tamagotchi.sleepiness ===6){
 //         sleepiness.style.color = "yellow"
-//         console.log(hunger);
+        // console.log(tamagotchi.sleepiness);
 //    // } else
     //  if(tamagotchi.sleepiness === 11){
     //     sleepiness.style.color = "red";
@@ -163,7 +158,7 @@ const playTamagotchi = () => {
     // console.log(tamagotchi.boredom);
 //     if(tamagotchi.boredom ===6){
 //         boredom.style.color = "yellow"
-//         console.log(hunger);
+        // console.log(tamagotchi.boredom);
 //    // } else
     // if(tamagotchi.boredom === 11){
     //     boredom.style.color = "red";
@@ -173,30 +168,37 @@ const playTamagotchi = () => {
 
     // }
  };
+// Alter button text based on the name that was submited
+const submitBTN = document.querySelector(".submit");
+submitBTN.addEventListener("click", function alterButtonName (event) {
+    event.preventDefault();
+    // grab the text field value
+    let tamagotachiName = document.querySelector("#name").value;
+    // console.log(tamagotachiName);
+    // grab the buttonsFeature
+    let nameText = document.querySelector(".nameText");
+    nameText.innerHTML = `Say Hello to your Tamagotachi Friend, ${tamagotachiName}!`;
+    const buttonValue = document.querySelectorAll(".value");
+    // console.log(buttonValue);
+    // Change the button innerHTML
+    buttonValue[0].innerHTML =`Feed ${tamagotachiName}`;
+    buttonValue[1].innerHTML =`Put ${tamagotachiName} to Bed`;
+    buttonValue[2].innerHTML =`Play with ${tamagotachiName}`;
 
-
-   // button function for the game 
+  // button function for the game 
    feed.addEventListener("click", feedTamagotchi);
    sleep.addEventListener("click", sleepTamagotchi);
    play.addEventListener("click", playTamagotchi);
    
-
-// stopInterval/ style text in the invital
-const increaseScaleTamgotchi = () => {
+ // Increase the Scale Function
+ const increaseScaleTamgotchi = () => {
     tamagotchi.increaseScale();
-
-// if(tamagotchi.hunger === 6 || tamagotchi.sleepiness ===6 || tamagotchi.boredom ===6){
-//     hunger.style.color = "yellow";
-//     sleepiness.style.color = "yellow"
-//     console.log(hunger);
-// } else 
-if(tamagotchi.hunger === 11){
-    hunger.style.color = "red";
+    if(tamagotchi.hunger === 11){
+        hunger.style.color = "red";
     alert(`${tamagotachiName} has passed on from hunger! Game has been reset`);
     tamagotchi.reset();
     clearInterval(increasingScaleTamagotchi);
     clearInterval(agingUpTamagotchi);
-    
 } else if(tamagotchi.sleepiness === 11){
     sleepiness.style.color = "red";
     alert(`${tamagotachiName} has passed on from sleepiness! Game has been reset`);
@@ -211,9 +213,7 @@ if(tamagotchi.hunger === 11){
     tamagotchi.reset()
 }
 }
-
-
-   const ageUpTamagotchi = () => {
+const ageUpTamagotchi = () => {
     tamagotchi.ageUp()
     console.log(age)
 //setInterval  inside the submit
@@ -241,38 +241,18 @@ if(tamagotchi.hunger === 11){
                     }
                 // tamagotchi.reset()
             }
-        
+
     }
 
     //setInterval  inside the submit
-        let agingUpTamagotchi=setInterval(ageUpTamagotchi, 3000);
-        let increasingScaleTamagotchi = setInterval(increaseScaleTamgotchi, 2000);
-    //Scale Section
-//  
+        let agingUpTamagotchi=setInterval(ageUpTamagotchi, 6000);
+        let increasingScaleTamagotchi = setInterval(increaseScaleTamgotchi, 4000);
+ 
 
 
-// submitBTN.addEventListener("reset",alterButtonName);
  });
-// function that allows the dropdown option for the rules
-let gamesRules = document.querySelector(".gamesRules");
-gamesRules.addEventListener("click", () => { 
-    
-        let rules = gamesRules.nextElementSibling;
-        // console.log(rules);
-        gamesRules.classList.toggle("active");
-        if (gamesRules.classList.contains("active")) {
-            rules.style.display = "block";
-        } else {
-            rules.style.display = "none";
-        }
-});
 
-// // reset hunger, age, sleepiness in a function
-// let reset =document.querySelector(".reset");
-// reset.addEventListener("click",resetTamagotchi)
-// const resetTamagotchi = () => {
-//     tamagotchi.reset()
-// };
+
 // reset hunger, age, sleepiness in a function
 let reset =document.querySelector(".reset");
 
