@@ -168,6 +168,12 @@ const playTamagotchi = () => {
 
     // }
  };
+ const resetTamagotchi = () => {
+    tamagotchi.reset()
+    // clearInterval(agingUpTamagotchi);
+    // clearInterval(increasingScaleTamagotchi)
+};
+
 // Alter button text based on the name that was submited
 const submitBTN = document.querySelector(".submit");
 submitBTN.addEventListener("click",function (event) {
@@ -195,24 +201,26 @@ submitBTN.addEventListener("click",function (event) {
  // Increase the Scale Function
  const increaseScaleTamgotchi = () => {
     tamagotchi.increaseScale();
-    if(tamagotchi.hunger === 11){
+    if(tamagotchi.hunger === 10){
         hunger.style.color = "red";
-    alert(`${tamagotachiName} has passed on from hunger! Game has been reset`);
-    tamagotchi.reset();
+    alert(`${tamagotachiName} has passed on from hunger! Click the reset button to reset the game.`);
     clearInterval(increasingScaleTamagotchi);
     clearInterval(agingUpTamagotchi);
-} else if(tamagotchi.sleepiness === 11){
+    reset.addEventListener("click",resetTamagotchi)
+    //tamagotchi.reset();
+} else if(tamagotchi.sleepiness === 10){
     sleepiness.style.color = "red";
-    alert(`${tamagotachiName} has passed on from sleepiness! Game has been reset`);
+    alert(`${tamagotachiName} has passed on from sleepiness! Click the reset button to reset the game.`);
     clearInterval(increasingScaleTamagotchi);
     clearInterval(agingUpTamagotchi);
-    tamagotchi.reset()
-} else if(tamagotchi.boredom === 11){
+    // tamagotchi.reset()
+} else if(tamagotchi.boredom === 10){
     boredom.style.color = "red";
-    alert(`${tamagotachiName} has passed on from boredom! Game has been reset`);
+    alert(`${tamagotachiName} has passed on from boredom!Click the reset button to reset the game.`);
     clearInterval(increasingScaleTamagotchi);
     clearInterval(agingUpTamagotchi);
-    tamagotchi.reset()
+    reset.addEventListener("click",resetTamagotchi)
+    // tamagotchi.reset()
 }
 }
 const ageUpTamagotchi = () => {
@@ -249,7 +257,7 @@ const ageUpTamagotchi = () => {
 
     //setInterval  inside the submit
         let agingUpTamagotchi=setInterval(ageUpTamagotchi, 6000);
-        let increasingScaleTamagotchi = setInterval(increaseScaleTamgotchi, 4000);
+        let increasingScaleTamagotchi = setInterval(increaseScaleTamgotchi, 3000);
  
 
 
@@ -259,9 +267,4 @@ const ageUpTamagotchi = () => {
 // reset hunger, age, sleepiness in a function
 let reset =document.querySelector(".reset");
 
-const resetTamagotchi = () => {
-    tamagotchi.reset()
-    // clearInterval(agingUpTamagotchi);
-    // clearInterval(increasingScaleTamagotchi)
-};
-reset.addEventListener("click",resetTamagotchi)
+
