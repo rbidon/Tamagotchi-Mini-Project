@@ -233,15 +233,15 @@ const ageUpTamagotchi = () => {
                 console.log("Cute Happy Chicken Eggs")
                 alert(`${tamagotachiName} has evolved`);
                 document.querySelector(".brownEgg").src ="./images/eggMusles.jpeg"
-            } else if(tamagotchi.age === 9){
+            } else if(tamagotchi.age ===10){
                 console.log("Little Chick")
                 alert(`${tamagotachiName} has evolved`);
                 document.querySelector(".brownEgg").src ="./images/littleChick.png"
-            } else if(tamagotchi.age === 13){
+            } else if(tamagotchi.age === 15){
                 console.log("Chicken Hen")
                 alert(`${tamagotachiName} has evolved`);
                 document.querySelector(".brownEgg").src ="./images/grownHen.jpeg";
-               }  else if(tamagotchi.age ===19){ 
+               }  else if(tamagotchi.age ===20){ 
                 clearInterval(agingUpTamagotchi);
                 clearInterval(increasingScaleTamagotchi)
                 alert("Winner Winner Chicken Dinner!")
